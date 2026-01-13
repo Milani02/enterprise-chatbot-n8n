@@ -1,0 +1,886 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #f5f8f7;
+    overflow-y: auto;
+}
+
+.virtual {
+    color: #000000cb;
+}
+
+/* Barra superior */
+header {
+    background-color: #4d5b29;
+    height: 30px;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.mainText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    color: #000000d8;
+    font-size: 52px;
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.novo {
+    color: #000;
+}
+
+.biospan {
+    color: #4d5b29;
+}
+
+.pText {
+    color: #000000bd;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.imageRobot {
+    display: flex;
+    justify-content: center;
+    margin-top: -300px;
+    margin-right: 180px;
+}
+
+.imgRobot {
+    height: 320px;
+    width: 470px;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.imgChatBranco {
+    height: 330px;
+    width: 283px;
+    border-radius: 10px;
+    transition: 0.9s;
+}
+
+.imgChatBranco:hover {
+    transform: scale(1.2);
+}
+
+.btnChat {
+    box-shadow: 0px 4px 10px #00000033;
+    border: none;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    z-index: 1000;
+}
+
+#iconeChat:hover {
+    transform: scale(1.1);
+}
+
+.cardChat {
+    width: 350px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    right: 20px;
+    bottom: 180px;
+    z-index: 999;
+    font-family: "Roboto", sans-serif;
+    overflow: hidden;
+    /* animação suave */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#cardChat {
+    box-shadow: 0 4px 10px #000000da;
+}
+
+/* Estado visível com transição */
+.cardChat.mostrar {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Cabeçalho verde */
+.cardHeader {
+    background-color: #3c4c2d;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 🟢 NOVO: Histórico de mensagens */
+.historicoChat {
+    color: #ffffff;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardBody {
+    display: flex;
+    gap: 13px;
+}
+
+
+#inputMessage {
+    font-size: 14px;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 25px 10px;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 4px 8px #00000066;
+}
+
+#enviarPergunta {
+    background-color: #4d5b29;
+    border-radius: 50%;
+    height: 45px;
+    width: 55px;
+    color: #ddd;
+    border: none;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    transition: 0.5s;
+}
+
+#enviar {
+    cursor: pointer;
+    font-size: 22px;
+    transition: 0.4s;
+}
+
+#enviarPergunta:hover {
+    transform: scale(1.1);
+}
+
+#bioChatHeader {
+    height: 50px;
+    width: 160px;
+    border-radius: 0 14px 14px 14px;
+}
+
+.textHeader {
+    width: fit-content;
+    max-width: 80%;
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+    background-color: #91986c;
+    padding: 14px;
+    border-radius: 0 14px 14px 14px;
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.msgUser {
+    background-color: #4d5b29;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 12px 12px 0 12px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+
+.spaceVerde {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4d5b29;
+    height: 430px;
+    width: 380px;
+    border-radius: 20px;
+    margin-right: 170px;
+    margin-top: 65px;
+}
+
+.area-verde {
+    background-color: #3c4c2d;
+    padding: 60px 20px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin: 40px auto;
+    transition: 0.6s;
+    margin-top: 35px;
+}
+
+.conteudo-central {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+}
+
+.subtitulo {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #3c4c2d;
+    border-radius: 10px;
+    padding: 25px 20px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
+    text-align: left;
+    color: #f5f5f5;
+    box-shadow: 0 4px 10px #00000077;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #465b34;
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ffffffb2;
+}
+
+.spnChat {
+    color: #fff;
+    font-weight: bold;
+}
+
+#iconeSeringa,
+#iconeGear,
+#iconeFilm {
+    font-size: 65px;
+    display: block;
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+    text-align: center;
+    margin-bottom: 10px;
+    animation: flow 3s ease-in-out infinite;
+}
+
+@keyframes flow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.finalParte {
+    display: flex;
+    justify-content: space-between;
+}
+
+.textFinal {
+    font-family: "Roboto", sans-serif;
+    color: #000000d8;
+    font-size: 40px;
+    margin-top: 60px;
+    margin-left: 170px;
+}
+
+.pFinal {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000000ad;
+    font-size: 14px;
+    margin-top: 130px;
+    margin-left: 40px;
+}
+
+.robo5 {
+    height: 330px;
+    width: 340px;
+    margin-right: 55px;
+    margin-top: -50px;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+footer {
+    height: 80px;
+    font-family: "Roboto", sans-serif;
+    color: #000000c2;
+    text-align: center;
+    margin-top: 13%;
+    background-color: #f5f8f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 13px;
+    padding: 10px 25px;
+}
+
+.rodape {
+    font-size: 12px;
+    color: #3c4c2d;
+}
+
+/* ========================= */
+/* 🌐 RESPONSIVIDADE FINAL ESTRUTURADA */
+/* ========================= */
+
+/* ======== DESKTOPS PADRÃO (1025px+) ======== */
+@media (min-width: 1025px) {
+
+    /* Botão de chat fixo */
+    .btnChat {
+        position: fixed;
+        right: 25px;
+        top: 90%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 10px #00000033;
+        border-radius: 10px;
+        padding: 12px 18px;
+        gap: 8px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    #iconeChat {
+        font-size: 25px !important;
+        background-color: #465b34;
+        color: #fff;
+        padding: 10px !important;
+        border-radius: 50%;
+        transition: 0.5s;
+    }
+
+    #iconeChat:hover {
+        transform: scale(1.1);
+    }
+
+    .textChat {
+        display: inline-block;
+        font-size: 14px;
+        color: #5e5e5e;
+    }
+
+    /* 💬 JANELA DE DÚVIDAS */
+    .cardChat {
+        width: 340px !important;
+        height: 440px !important;
+        right: 25px;
+        bottom: 140px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
+        background-color: #fff;
+    }
+
+    /* Cabeçalho */
+    .cardHeader {
+        background-color: #3c4c2d;
+        color: #fff;
+        padding: 10px 16px !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .cardHeader h3 {
+        margin: 0;
+        font-size: 17px;
+    }
+
+    .cardHeader button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 18px !important;
+        padding: 4px 6px !important;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .cardHeader button:hover {
+        transform: scale(1.05);
+        color: #d8d8d8;
+    }
+
+    /* Saudação inicial */
+    .textHeader {
+        width: fit-content;
+        /* CORRIGIDO */
+        max-width: 80%;
+        /* CORRIGIDO */
+        font-family: "Roboto", sans-serif;
+        font-style: italic;
+        color: #ffffff;
+        font-size: 16px;
+        background-color: #91986c;
+        padding: 14px;
+        border-radius: 0 14px 14px 14px;
+        margin-left: 0;
+        /* CORRIGIDO */
+        margin-right: auto;
+        /* CORRIGIDO */
+        margin-top: 5px;
+        /* Adicionado um pequeno espaçamento */
+    }
+}
+
+/* ======== TELAS GRANDES (1440px OU MAIS) ======== */
+@media (min-width: 1440px) {
+
+    #iconeChat {
+        font-size: 22px !important;
+        padding: 10px !important;
+    }
+
+    /* 💬 Janela de perguntas maior e com mais espaço interno */
+    .cardChat {
+        width: 360px !important;
+        height: 580px !important;
+        right: 45px;
+        bottom: 190px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        padding-bottom: 20px;
+        background-color: #fff;
+    }
+
+    /* Cabeçalho com “X” fora */
+    .cardHeader {
+        position: relative;
+        background-color: #3c4c2d;
+        color: #fff;
+        padding: 14px 22px !important;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    .cardHeader h3 {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .cardHeader button {
+        position: absolute;
+        top: -18px;
+        right: -18px;
+        background-color: #3c4c2d;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px !important;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .cardHeader button:hover {
+        background-color: #465b34;
+        transform: scale(1.08);
+    }
+
+    .textHeader {
+        font-style: italic;
+        font-size: 17px;
+        padding: 20px;
+        margin: 10px 0 14px 0;
+        /* CORRIGIDO: Ajuste de margem */
+        line-height: 1.6;
+        background-color: #91986c;
+        border-radius: 0 14px 14px 14px;
+        color: #000;
+        width: fit-content;
+        max-width: 80%;
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+/* ======== TABLETS (até 1024px) ======== */
+@media (max-width: 1024px) {
+
+    header {
+        width: 90%;
+        height: 35px;
+    }
+
+    .text {
+        font-size: 38px;
+        margin-left: 60px;
+    }
+
+    .pText {
+        font-size: 14px;
+        margin-left: 60px;
+    }
+
+    .imageRobot {
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .imgRobot {
+        height: 260px;
+        width: 360px;
+    }
+
+    .spaceVerde,
+    .imgChatBranco,
+    .robo5 {
+        display: none !important;
+    }
+
+    /* Chat fixo no canto inferior direito */
+    .btnChat {
+        position: fixed;
+        bottom: 58px;
+        right: 20px;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    .textChat {
+        display: none !important;
+    }
+
+    #iconeChat {
+        font-size: 28px;
+        padding: 9px;
+    }
+
+    .cardChat {
+        width: 320px !important;
+        height: 420px !important;
+        bottom: 130px;
+    }
+
+    .cardHeader {
+        padding: 8px 12px;
+    }
+
+    .cardHeader button {
+        font-size: 18px;
+        padding: 4px;
+    }
+
+    .textHeader {
+        font-style: italic;
+        font-size: 15px;
+        padding: 12px;
+        margin-left: 0;
+        /* CORRIGIDO */
+        margin-right: auto;
+        /* CORRIGIDO */
+    }
+
+    .finalParte {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .textFinal {
+        margin: 0;
+        font-size: 30px;
+    }
+
+    .pFinal {
+        margin: 30px 0 0 0;
+        font-size: 13px;
+    }
+}
+
+/* ======== CELULARES MÉDIOS (até 768px) ======== */
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        width: 100%;
+        height: 40px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .mainText {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text {
+        order: 1;
+        font-size: 32px;
+        margin: 20px 0 0 0;
+    }
+
+    .pText {
+        order: 2;
+        font-size: 14px;
+        margin: 10px 25px 0 25px;
+    }
+
+    .imageRobot {
+        order: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .imgRobot {
+        width: 280px;
+        height: auto;
+    }
+
+    .spaceVerde,
+    .imgChatBranco,
+    .robo5 {
+        display: none !important;
+    }
+
+    /* Ícone do chat */
+    .btnChat {
+        position: fixed;
+        bottom: 45px;
+        right: 15px;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 10px #00000033;
+        border-radius: 50%;
+        padding: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .textChat {
+        display: none !important;
+    }
+
+    #iconeChat {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    .cardChat {
+        width: 300px !important;
+        height: 400px !important;
+        right: 15px;
+        bottom: 120px;
+    }
+
+    .textHeader {
+        font-style: italic;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .area-verde {
+        order: 4;
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .finalParte {
+        order: 5;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .textFinal {
+        order: 6;
+        font-size: 28px;
+        margin-top: 30px;
+    }
+
+    .pFinal {
+        order: 7;
+        font-size: 13px;
+        margin: 20px 30px 0 30px;
+        text-align: center;
+    }
+
+    footer {
+        order: 8;
+        margin-top: 40px;
+        font-size: 8px;
+        padding: 15px 10px;
+    }
+}
+
+/* ======== CELULARES PEQUENOS (até 480px) ======== */
+@media (max-width: 480px) {
+
+    .text {
+        font-size: 28px;
+    }
+
+    .pText {
+        font-size: 13px;
+    }
+
+    .imgRobot {
+        width: 240px;
+    }
+
+    .area-verde {
+        padding: 40px 15px;
+    }
+
+    .textFinal {
+        font-size: 24px;
+    }
+
+    .pFinal {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 11px;
+        padding: 10px;
+    }
+
+    /* Chat mais compacto */
+    .btnChat {
+        bottom: 53px;
+        right: 15px;
+        padding: 4px;
+    }
+
+    .textChat {
+        display: none !important;
+    }
+
+    #iconeChat {
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    .cardChat {
+        width: 270px !important;
+        height: 380px !important;
+        right: 10px;
+        bottom: 110px;
+    }
+
+    .textHeader {
+        font-style: italic;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #enviar {
+        width: 60px;
+        height: 40px;
+    }
+}
+
+/* Estilo para links dentro da mensagem do BOT (Opcional, mas recomendado) */
+.textHeader a {
+    color: #000000a8;
+    text-decoration: underline;
+    font-weight: bold;
+}

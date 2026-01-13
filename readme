@@ -1,0 +1,14 @@
+# 🤖 Enterprise Chatbot - JS + n8n Automation
+
+Este projeto consiste em um Chatbot inteligente desenvolvido para otimizar o atendimento interno da [Nome da Empresa ou 'minha empresa']. 
+
+## 🛠️ Arquitetura
+* **Front-end:** Interface personalizada em HTML5, CSS3 e JavaScript.
+* **Back-end (Orquestração):** Fluxos automatizados no **n8n** consumindo webhooks.
+* **Integrações:** Api Open AI, Banco de dados (Supabase) e Embeddings Open AI.
+
+## 💡 O Diferencial
+A escolha do **n8n** permitiu uma entrega ágil de lógica complexa de backend, facilitando a manutenção e a escalabilidade do bot sem a necessidade de uma infraestrutura pesada de servidores. O JavaScript no front-end faz a ponte via **Webhooks**, garantindo uma comunicação em tempo real.
+
+## 🤝 Colaboração
+Projeto realizado em conjunto com o time de Front-end, onde foquei na arquitetura de dados e lógica de automação do backend.
