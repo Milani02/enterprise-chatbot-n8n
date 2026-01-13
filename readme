@@ -1,14 +1,17 @@
-# 🤖 Enterprise Chatbot - JS + n8n Automation
+# 🤖 Chatbot de Automação Corporativa
 
-Este projeto consiste em um Chatbot inteligente desenvolvido para otimizar o atendimento interno da [Nome da Empresa ou 'minha empresa']. 
+Este projeto é um chatbot inteligente que integra uma interface web moderna com um motor de automação backend via **n8n**. Desenvolvido para otimizar processos internos e agilizar o atendimento.
 
-## 🛠️ Arquitetura
-* **Front-end:** Interface personalizada em HTML5, CSS3 e JavaScript.
-* **Back-end (Orquestração):** Fluxos automatizados no **n8n** consumindo webhooks.
-* **Integrações:** Api Open AI, Banco de dados (Supabase) e Embeddings Open AI.
+## 🚀 Tecnologias Utilizadas
+* **Front-end:** HTML5, CSS3 e JavaScript (ES6+).
+* **Back-end:** [n8n](https://n8n.io/)
+* **Protocolo:** Comunicação via Webhooks e JSON.
 
-## 💡 O Diferencial
-A escolha do **n8n** permitiu uma entrega ágil de lógica complexa de backend, facilitando a manutenção e a escalabilidade do bot sem a necessidade de uma infraestrutura pesada de servidores. O JavaScript no front-end faz a ponte via **Webhooks**, garantindo uma comunicação em tempo real.
+## 🛠️ Minha Contribuição
+Enquanto a interface visual contou com colaboração técnica, fui o responsável por:
+1.  **Arquitetura do Fluxo:** Construção de toda a lógica no n8n.
+2.  **Integração de Webhook:** Configuração do ponto de entrada para receber dados do Front-end.
+3.  **Lógica de Negócio:** Responder duvidas do público externo.
 
-## 🤝 Colaboração
-Projeto realizado em conjunto com o time de Front-end, onde foquei na arquitetura de dados e lógica de automação do backend.
+## 📖 Como funciona
+O Front-end captura a mensagem do usuário e dispara um `fetch` para o Webhook do n8n. O fluxo processa a informação e retorna uma resposta estruturada para ser exibida no chat.
